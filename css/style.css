@@ -258,7 +258,7 @@ h3.heading {
     z-index: -9999;
 }
 .fixed-dark {
-    background-image: url("../img/apple.jpg");
+    background-image: url("../img/apple.png");
     position: fixed;
     height: 100%;
     width: 100%;
