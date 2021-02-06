@@ -80,17 +80,17 @@ $('.frontEndbtn').click(function(){
         beginAt: 1
     })
 })
-$('.frameworksbtn').click(function(){
+$('.css3btn').click(function(){
     $('.counter').counterUp({
         time: 2000,
         delay: 20,
         beginAt: 1
     })
 })
-$('.elseModalbtn').click(function(){
+$('.bootstrapbtn').click(function(){
     $('.counter').counterUp({
         time: 2000,
-        delay: 25,
+        delay: 20,
         beginAt: 1
     })
 })
