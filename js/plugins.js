@@ -1,11 +1,47 @@
 /*========== NAVBAR TRANSPARENT TO SOLID ==========*/
+$(document).ready(function () { //when document(DOM) loads completely
+    checkScroll(); //check if page is scrolled
+    $(window).scroll(checkScroll); //get scroll position of window
+});
+
+function checkScroll() { //check if page is scrolled
+if ($(window).scrollTop() >= 600) { //if window is scrolled 300px or more
+    $('.navbar').addClass('solid'); //add class 'solid' to element with class 'navbar'
+} else { //if page is not scrolled 300px from top
+    $('.navbar').removeClass('solid'); //remove class 'solid' from navbar element
+}
+}
 
 
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
+$(document).ready(function () {
+	checkScroll();
+	$(window).scroll(checkScroll);
+	$('.navbar-toggler').click(function () {
+		if (!$('.navbar').hasClass('solid-toggle')) {
+			if ($(window).scrollTop() < 600) {
+				$('.navbar').toggleClass('solid-toggle');
+			}
+		}
+	});
+});
+
 
 
 /*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK ==========*/
-
+$(document).on('click', 'a[href^="#"]', function(event) {
+    event.preventDefault();
+    $('.navbar-toggler').addClass('colapsed');
+    $('#navbarResponsive').removeClass('show');
+    
+    setTimeout(function () {
+        $('nav.navbar').removeClass('solid-toggle');
+    }, 300);
+    
+    $('html, body').animate( {
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 1000);
+})
 
 /*========== BOUNCING DOWN ARROW ==========*/
 
@@ -14,11 +50,50 @@
 
 
 /*========== MEET THE TEAM CAROUSEL ==========*/
-
+$(document).ready(function(){ //when document(DOM) loads completely
+    $('#team-carousel').owlCarousel({ //owlCarousel settings
+        autoplay: false, //set to false to turn off autoplay and only use nav
+        autoplayHoverPause: true, //set to false to prevent pausing on hover
+        loop: true, //set to false to stop carousel after all slides shown
+        autoplayTimeout: 8000, //time between transitions
+        smartSpeed: 1200, //transition speed
+        navSpeed: 1000, //transition speed when using dots/buttons
+        responsive : { //set number of items shown per screen width
+            0 : {
+                items: 1 //0px width and up display 1 item
+            },
+            768 : {
+                items: 2 //576px width and up display 2 items
+            },
+            992 : {
+                items: 3 //768px width and up display 3 items
+            }
+        }
+    });
+  });
 
 /*========== SKILLS COUNTER ==========*/
-
-
+$('.frontEndbtn').click(function(){
+    $('.counter').counterUp({
+        time: 2000,
+        delay: 20,
+        beginAt: 1
+    })
+})
+$('.frameworksbtn').click(function(){
+    $('.counter').counterUp({
+        time: 2000,
+        delay: 20,
+        beginAt: 1
+    })
+})
+$('.elseModalbtn').click(function(){
+    $('.counter').counterUp({
+        time: 2000,
+        delay: 25,
+        beginAt: 1
+    })
+})
 /*========== CLIENTS CAROUSEL ==========*/
 
 
@@ -108,3 +183,4 @@ $(function () {
       }
   })
 });
+
