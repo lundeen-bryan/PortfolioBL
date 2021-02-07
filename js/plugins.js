@@ -98,7 +98,15 @@ $('.bootstrapbtn').click(function(){
 
 
 /*========== TOP SCROLL BUTTON ==========*/
-
+$(document).ready(function() {
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 500){
+            $('.top-scroll').fadeIn();
+        } else {
+            $('.top-scroll').fadeOut();
+        }
+    })
+})
 
 /*========== MAKE ALL ANIMATION "FADEINUP" ON MOBILE 
 
