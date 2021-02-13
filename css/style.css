@@ -486,3 +486,19 @@ Extra (xl) large devices (large desktops, 1200px and up)
     background-color: rgba(80,89,98,0.50);
     min-height: 24px;
 }
+
+.fixed-about {
+    background-image: url("../img/golden-gate-bridge-1480448.jpg");
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: table;
+}
