@@ -60,6 +60,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#contact">contact</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://bryanlundeen.blog/" target="_blank">blog</a>
+        </li>
       </ul>
     </div>
   </div>
